@@ -18,6 +18,7 @@ public class GameController : MonoBehaviour
     {
         if (SteamVR_Actions._default.TestTrigger.GetStateDown(player)){
             Instantiate(ball, position, rotation);
+            
         }
 
     }
