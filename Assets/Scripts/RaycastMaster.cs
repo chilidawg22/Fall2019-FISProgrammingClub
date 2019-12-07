@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class RaycastMaster : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class RaycastMaster : MonoBehaviour
     public GameObject ball;
     public Material no;
     public Material yes;
+    public TextMeshProUGUI scoreText;
 
     float totalTime;
     float timeOnTarget;
@@ -33,5 +35,7 @@ public class RaycastMaster : MonoBehaviour
             }
             totalTime += Time.deltaTime;
         }
+
+        scoreText.text = ((timeOnTarget/totalTime)*100).ToString("0.00");
     }
 }
