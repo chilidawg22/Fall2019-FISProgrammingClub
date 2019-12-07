@@ -943,6 +943,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   indicator: {fileID: 303999440}
   ball: {fileID: 1563897961}
+  no: {fileID: 2100000, guid: 609fc4efafdc447cea27350934acc9d4, type: 2}
+  yes: {fileID: 2100000, guid: 04b0fee00c4564e2492c00f9554312e0, type: 2}
 --- !u!1 &1870612519
 GameObject:
   m_ObjectHideFlags: 0

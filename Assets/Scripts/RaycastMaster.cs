@@ -7,8 +7,12 @@ public class RaycastMaster : MonoBehaviour
 
     public GameObject indicator;
     public GameObject ball;
+    public Material no;
+    public Material yes;
 
-  
+    float totalTime;
+    float timeOnTarget;
+
     void FixedUpdate() {
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward /*transform.eulerAngles*/, out hit)) {
@@ -22,7 +26,12 @@ public class RaycastMaster : MonoBehaviour
             Debug.Log(ballC);
             if (hitC == ballC) {
                 Debug.Log("hit!");
+                indicator.GetComponent<Renderer>().material = yes;
+                timeOnTarget += Time.deltaTime;
+            } else {
+                indicator.GetComponent<Renderer>().material = no;
             }
+            totalTime += Time.deltaTime;
         }
     }
 }
