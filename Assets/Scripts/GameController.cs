@@ -10,14 +10,14 @@ public class GameController : MonoBehaviour
     public SteamVR_Input_Sources player;
     public GameObject ball;
     Vector3 position = new Vector3(1,1,1); 
-    Quaternion rotation = new Quaternion(0,0,0);
+    Quaternion rotation = new Quaternion(0,0,0,0);
 
 
     // Update is called once per frame
     void Update()
     {
         if (SteamVR_Actions._default.TestTrigger.GetStateDown(player)){
-            Instantiate(ball, position, rotation );
+            Instantiate(ball, position, rotation);
         }
 
     }
