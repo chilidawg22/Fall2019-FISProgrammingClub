@@ -6,24 +6,32 @@ public class RaycastMaster : MonoBehaviour
 {
 
     public GameObject indicator;
+    public GameObject ball;
+    public Material no;
+    public Material yes;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    float totalTime;
+    float timeOnTarget;
 
     void FixedUpdate() {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.eulerAngles, out hit)) {
+        if (Physics.Raycast(transform.position, transform.forward /*transform.eulerAngles*/, out hit)) {
             indicator.transform.position = hit.point;
-            Debug.Log(hit.point.x + ", " + hit.point.y + ", " + hit.point.z);
+            //Debug.Log(hit.point.x + ", " + hit.point.y + ", " + hit.point.z);
+
+            //Debug.Log("indicator " + indicator.transform.position.x + ", " + indicator.transform.position.y + ", " + indicator.transform.position.z);
+            Collider hitC = hit.collider;
+            Collider ballC = ball.GetComponent<Collider>();
+            Debug.Log(hitC);
+            Debug.Log(ballC);
+            if (hitC == ballC) {
+                Debug.Log("hit!");
+                indicator.GetComponent<Renderer>().material = yes;
+                timeOnTarget += Time.deltaTime;
+            } else {
+                indicator.GetComponent<Renderer>().material = no;
+            }
+            totalTime += Time.deltaTime;
         }
     }
 }
