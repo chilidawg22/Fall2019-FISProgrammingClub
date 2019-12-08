@@ -17,6 +17,9 @@ public GameObject Ball;
 private GameObject[] launchers;
 public bool activated = true;
 
+public GameObject RayCast;
+private RaycastMaster Ray;
+
     void Start()
     {
         launchers = GameObject.FindGameObjectsWithTag("BallLauncher");

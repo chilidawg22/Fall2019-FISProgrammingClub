@@ -10,11 +10,9 @@ public class RaycastMaster : MonoBehaviour
     public GameObject ball;
     public Material no;
     public Material yes;
-    float totalTime;
     public float timeOnTarget;
     LineRenderer line;
-    public BallLauncherController Launchers;
-    public double totalTime;
+    public GameObject Launchers;
 
     void Start(){
 
@@ -32,13 +30,12 @@ public class RaycastMaster : MonoBehaviour
             if (hitC.transform.gameObject.tag == "Ball") {
                 //Debug.Log("hit!");
                 indicator.GetComponent<Renderer>().material = yes;
-                if(!Launchers.activated){
+                if(!Launchers.GetComponent<BallLauncherController>().activated){
                     timeOnTarget += Time.deltaTime;
                 }
             } else {
                 indicator.GetComponent<Renderer>().material = no;
             }
-            totalTime += Time.deltaTime;
         }
         else{
             indicator.GetComponent<Renderer>().material = no;
