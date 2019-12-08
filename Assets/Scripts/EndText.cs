@@ -11,6 +11,5 @@ public class EndText : MonoBehaviour
     void Update()
     {
         GetComponent<Text>().text = "Time On Target: " + Score.TOT.ToString("F1") +" Out of total time elapsed: 60, Your score is thus: " + ((Score.TOT/60) *100).ToString("F1");
-
     }
 }
