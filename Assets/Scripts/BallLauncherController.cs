@@ -10,27 +10,28 @@ public class BallLauncherController : MonoBehaviour
 
 
 public double delay = 0;
-private double lastCall = 0;
+private double Timesince = 0;
 public GameObject Ball;
 private GameObject[] launchers;
+private bool activated = true;
 
     void Start()
     {
         launchers = GameObject.FindGameObjectsWithTag("BallLauncher");
         launchers[Random.Range(0, launchers.Length)].GetComponent<BallLauncher>().launch();
-        lastCall = Time.time;
     }
 
     void Update()
     {
         if (SteamVR_Actions._default.TestTrigger.GetStateDown(player)){
-            launchers[0].GetComponent<BallLauncher>().launch();
+            activated = true;
+            Timesince = Time.time;
         }
-        /*
-       if(Time.time - lastCall >= delay && !Ball.activeSelf){
-           launchers[0].GetComponent<BallLauncher>().launch();
-           lastCall = Time.time;
+
+       if(Time.time - Timesince >= delay && activated){
+           launchers[Random.Range(0, launchers.length)].GetComponent<BallLauncher>().launch();
+           Timesince = Time.time;
+           activated = false;
        } 
-       */
     }
 }

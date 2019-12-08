@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571334, b: 0.3069219, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -418,7 +418,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &817304047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -432,7 +432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: 2
-  ball: {fileID: 6211001693935024244, guid: 7633c6b621312436cbfc59065711664f, type: 3}
+  ball: {fileID: 0}
 --- !u!4 &817304048
 Transform:
   m_ObjectHideFlags: 0
@@ -459,6 +459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d419e8c9a4e5548a79aa11cbae9537c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: 0
   delay: 2
   Ball: {fileID: 219550654}
 --- !u!1 &860073740
@@ -810,6 +811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Ball: {fileID: 219550654}
+  multiplier: 7.5
 --- !u!4 &1304761511
 Transform:
   m_ObjectHideFlags: 0
@@ -818,7 +820,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1304761509}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.87, z: 2.06}
+  m_LocalPosition: {x: 1.28, y: 4.87, z: 2.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1887,6 +1889,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 13400000, guid: 2e81b378186c0ed4c98c04cfd4096914,
         type: 2}
+    - target: {fileID: 6002480515052036312, guid: b25f07dc20eeb48f88b69cbfd00913df,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.063
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b25f07dc20eeb48f88b69cbfd00913df, type: 3}
 --- !u!4 &6242611811812616360
