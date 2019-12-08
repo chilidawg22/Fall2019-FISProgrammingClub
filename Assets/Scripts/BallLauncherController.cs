@@ -29,7 +29,7 @@ private bool activated = true;
         }
 
        if(Time.time - Timesince >= delay && activated){
-           launchers[Random.Range(0, launchers.length)].GetComponent<BallLauncher>().launch();
+           launchers[Random.Range(0, launchers.Length)].GetComponent<BallLauncher>().launch();
            Timesince = Time.time;
            activated = false;
        } 
