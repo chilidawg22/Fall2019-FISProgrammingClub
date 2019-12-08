@@ -15,7 +15,7 @@ private double TimeSinceLastLaunch = 0;
 public double timer = 5;
 public GameObject Ball;
 private GameObject[] launchers;
-private bool activated = true;
+public bool activated = true;
 
     void Start()
     {
