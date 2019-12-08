@@ -11,6 +11,8 @@ public class RaycastMaster : MonoBehaviour
     public Material no;
     public Material yes;
     public TextMeshProUGUI scoreText;
+    public LineRenderer line;
+
 
     float totalTime;
     float timeOnTarget;
@@ -19,6 +21,8 @@ public class RaycastMaster : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward /*transform.eulerAngles*/, out hit)) {
             indicator.transform.position = hit.point;
+            line(transform.position,hit.point)
+            
             //Debug.Log(hit.point.x + ", " + hit.point.y + ", " + hit.point.z);
 
             //Debug.Log("indicator " + indicator.transform.position.x + ", " + indicator.transform.position.y + ", " + indicator.transform.position.z);
