@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class HUD : MonoBehaviour
@@ -33,5 +34,9 @@ public class HUD : MonoBehaviour
         }
         text.text = "TOT: " + Ray.timeOnTarget.ToString("F1");
         TotText.text = "Elapsed: " + duration.ToString("F1");
+        if(duration >= 60){
+            Score.TOT = Ray.timeOnTarget;
+            SceneManager.LoadScene("EndMenu");
+        }
     }
 }
