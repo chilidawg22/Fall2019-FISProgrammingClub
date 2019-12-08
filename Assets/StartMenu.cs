@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Valve.VR;
 
 public class StartMenu : MonoBehaviour
 {
-public SteamVR_Input_Sources player;
-
+    public SteamVR_Input_Sources player;
 
     void Update()
     {
