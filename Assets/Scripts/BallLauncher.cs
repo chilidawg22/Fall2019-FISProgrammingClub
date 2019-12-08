@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class BallLauncher : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+
+    public GameObject Ball;
+
+    void Update(){
+        //launch();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void launch(){
+        Ball.transform.position = transform.position;
+        Ball.SetActive(true);
+        Ball.GetComponent<Rigidbody>().AddForce(transform.forward/200, ForceMode.Impulse);
     }
 }
