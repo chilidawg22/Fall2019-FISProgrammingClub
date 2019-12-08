@@ -13,12 +13,10 @@ public class GameController : MonoBehaviour
     Quaternion rotation = new Quaternion(0,0,0,0);
 
 
-    // Update is called once per frame
     void Update()
     {
         if (SteamVR_Actions._default.TestTrigger.GetStateDown(player)){
             Instantiate(ball, position, rotation);
-            
         }
 
     }
