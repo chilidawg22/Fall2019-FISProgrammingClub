@@ -10,28 +10,27 @@ public class RaycastMaster : MonoBehaviour
     public GameObject ball;
     public Material no;
     public Material yes;
-    public TextMeshProUGUI scoreText;
-    public LineRenderer line;
-
-
     float totalTime;
     float timeOnTarget;
+    LineRenderer line;
+
+    void Start(){
+
+        line = GetComponent<LineRenderer>();
+    }
 
     void FixedUpdate() {
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward /*transform.eulerAngles*/, out hit)) {
-            indicator.transform.position = hit.point;
-            line(transform.position,hit.point)
-            
+            indicator.transform.position = hit.point;            
             //Debug.Log(hit.point.x + ", " + hit.point.y + ", " + hit.point.z);
 
             //Debug.Log("indicator " + indicator.transform.position.x + ", " + indicator.transform.position.y + ", " + indicator.transform.position.z);
             Collider hitC = hit.collider;
-            Collider ballC = ball.GetComponent<Collider>();
-            Debug.Log(hitC);
-            Debug.Log(ballC);
-            if (hitC == ballC) {
-                Debug.Log("hit!");
+
+
+            if (hitC.transform.gameObject.tag == "Ball") {
+                //Debug.Log("hit!");
                 indicator.GetComponent<Renderer>().material = yes;
                 timeOnTarget += Time.deltaTime;
             } else {
@@ -39,7 +38,10 @@ public class RaycastMaster : MonoBehaviour
             }
             totalTime += Time.deltaTime;
         }
+        else{
+            indicator.GetComponent<Renderer>().material = no;
+        }
 
-        scoreText.text = ((timeOnTarget/totalTime)*100).ToString("0.00");
+        //scoreText.text = ((timeOnTarget/totalTime)*100).ToString("0.00");
     }
 }
